@@ -1,6 +1,6 @@
 services:
   db:
-    image: postgres
+    image: postgres:16-alpine
     restart: always
     ports:
       - 5432:5432
@@ -9,6 +9,40 @@ services:
       POSTGRES_PASSWORD: mysecretpassword
       POSTGRES_DB: local
     volumes:
-      - pgdata:/var/lib/postgresql
+      - pgdata:/var/lib/postgresql/data
+
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    restart: always
+    volumes:
+      - .:/app:z
+      - /app/node_modules
+    ports:
+      - 5173:5173
+    environment:
+      - DATABASE_URL=postgres://root:mysecretpassword@db:5432/local
+      - BETTER_AUTH_SECRET=3e8ef63428989b5fa016c0bbf59a16f80a370e5b7fb5625c2901dbd56cf404ba
+      - BETTER_AUTH_URL=http://blog.localhost
+      - ORIGIN=http://blog.localhost
+    command: sh -c "npm install && npm run dev -- --host"
+    depends_on:
+      - db
+
+  proxy:
+    image: caddy:2-alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:z
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - web
+
 volumes:
   pgdata:
+  caddy_data:
+  caddy_config:

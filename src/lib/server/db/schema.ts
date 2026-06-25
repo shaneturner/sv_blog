@@ -96,3 +96,6 @@ export const accountRelations = relations(account, ({ one }) => ({
     references: [user.id],
   }),
 }));
+
+// TODO: Define the blog posts schema (id, title, slug, content, published, authorId, createdAt, updatedAt)
+
