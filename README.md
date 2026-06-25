@@ -7,7 +7,7 @@ A modern, containerized, and fully type-safe blog application template built wit
 
 ---
 
-## 🚀 Tech Stack & Architecture
+## Tech Stack & Architecture
 
 * **Frontend:** [Svelte 5](https://svelte.dev/) (utilizing experimental runes & top-level async) and [SvelteKit](https://svelte.dev/docs/kit).
 * **Database & ORM:** [PostgreSQL](https://www.postgresql.org/) managed by [Drizzle ORM](https://orm.drizzle.team/) for schema-first migrations and type safety.
@@ -18,7 +18,7 @@ A modern, containerized, and fully type-safe blog application template built wit
 
 ---
 
-## 🛠️ Local Development Setup
+## Local Development Setup
 
 This project is optimized to run inside containers using **Podman** (with standard rootless user namespaces on Fedora/Linux) or **Docker**.
 
@@ -67,7 +67,7 @@ Fedora's system resolver (`systemd-resolved`) automatically resolves any `*.loca
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 .
@@ -91,6 +91,6 @@ Fedora's system resolver (`systemd-resolved`) automatically resolves any `*.loca
 
 ---
 
-## 📌 Roadmap & TODOs
+## Roadmap & TODOs
 
 For a detailed breakdown of completed setup tasks, upcoming authentication features, schema designs, and CMS progress, please see the dedicated [TODO.md](TODO.md) roadmap file.

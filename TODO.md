@@ -4,7 +4,7 @@ This document tracks completed tasks, upcoming features, and the active roadmap 
 
 ---
 
-## 🏁 Phase 1: Core Architecture & Setup (Completed)
+## Phase 1: Core Architecture & Setup (Completed)
 
 - [x] **Local Multi-Container Stack:** Configure [compose.yaml](file:///home/shane/code/sv_blog/compose.yaml) to orchestrate PostgreSQL, Node/SvelteKit, and a reverse proxy.
 - [x] **Caddy Reverse Proxy:** Define [Caddyfile](file:///home/shane/code/sv_blog/Caddyfile) to host the application at `http://blog.localhost` with WebSocket (HMR) capabilities.
@@ -15,7 +15,7 @@ This document tracks completed tasks, upcoming features, and the active roadmap 
 
 ---
 
-## 🔒 Phase 2: Authentication Flow (Next Up)
+## Phase 2: Authentication Flow (Next Up)
 
 - [ ] **Signup Page:** Implement user registration form in [signup/+page.svelte](file:///home/shane/code/sv_blog/src/routes/auth/signup/+page.svelte) using Svelte 5 runes and `authClient.signUp.email()`.
 - [ ] **Signin Page:** Implement login form in [signin/+page.svelte](file:///home/shane/code/sv_blog/src/routes/auth/signin/+page.svelte).
@@ -23,7 +23,7 @@ This document tracks completed tasks, upcoming features, and the active roadmap 
 
 ---
 
-## 🗄️ Phase 3: Database & Blog Schema
+## Phase 3: Database & Blog Schema
 
 - [ ] **Define Posts Schema:** Create the `post` table structure in [schema.ts](file:///home/shane/code/sv_blog/src/lib/server/db/schema.ts) with fields:
   - `id` (text, primary key)
@@ -38,7 +38,7 @@ This document tracks completed tasks, upcoming features, and the active roadmap 
 
 ---
 
-## ✍️ Phase 4: CMS / Admin Dashboard
+## Phase 4: CMS / Admin Dashboard
 
 - [ ] **Create Post UI:** Build a writing form at `/admin/new` utilizing a markdown or rich text field.
 - [ ] **Posts Dashboard:** Add a workspace at `/admin` listing all posts, with toggle states to publish/unpublish or delete.
@@ -46,7 +46,7 @@ This document tracks completed tasks, upcoming features, and the active roadmap 
 
 ---
 
-## 🌐 Phase 5: Public Blog Interface
+## Phase 5: Public Blog Interface
 
 - [ ] **Index Blog Feed:** Update [+page.svelte](file:///home/shane/code/sv_blog/src/routes/+page.svelte) to fetch all published posts from Drizzle and render them.
 - [ ] **Dynamic Post Reading:** Build a route `/posts/[slug]` loading the requested post by slug and converting content to HTML.
